@@ -2,4 +2,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Requirements for DGM 1600
 
-![Screenshot](requirements.pdf)
+![Links to requirement](requirements.pdf)
