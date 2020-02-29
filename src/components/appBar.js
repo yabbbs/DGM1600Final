@@ -38,7 +38,7 @@ const AppBarComponent = ({ team, setPokemonTeam }) => {
                 <Drawer anchor="right" open={drawer} onClose={() => toggleDrawer(false)}>
                     <div style={{width: '50vw', padding: '50px'}}>
                     <Typography variant="h2">
-                        Your team
+                        Your team!
                     </Typography>
 
                     <Divider />
