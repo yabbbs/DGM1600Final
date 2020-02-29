@@ -23,19 +23,16 @@ export default function Album() {
     }
 
     useEffect(() => {
-    }, [pokemon, pokemonTeam]);
+    }, [pokemon, pokemonTeam, setPokemonTeam]);
 
     return (
         <React.Fragment>
-            <AppBarComponent team={pokemonTeam}/>
+            <AppBarComponent team={pokemonTeam} setPokemonTeam={(data) => setPokemonTeam(data)}/>
             <main style={{display: 'flex', flexDirection:'column', height: '100%'}}>
 
                 {/* Header content */}
                 <div className={classes.heroContent}>
                     <Container maxWidth="sm">
-                        {/* <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                            DGM 1600
-                        </Typography> */}
                         <Typography variant="h5" align="center" color="textSecondary" paragraph>
                             Add to your Pokemon dream team!
                         </Typography>

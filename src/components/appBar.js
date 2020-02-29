@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
@@ -12,13 +12,20 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 
-const AppBarComponent = ({team}) => {
+const AppBarComponent = ({ team, setPokemonTeam }) => {
+    const [updatedTeam, updateTeam] = useState(team);
     const [drawer, toggleDrawer] = useState(false);
 
     const handleDelete = (e,i) => {
-      console.info('You clicked the delete icon.', e,i);
-    //   let index = team.indexOf(i)
+        let index = team.indexOf(i)
+        team.splice(index, 1)
+        updateTeam(team)
+        setPokemonTeam(team);
     };
+
+    useEffect(() => {
+
+    }, [team, setPokemonTeam]);
   
     return (
         <AppBar position="sticky" color='primary'>
@@ -42,8 +49,8 @@ const AppBarComponent = ({team}) => {
                                 return(
                                     <div style={{padding: '5px', margin: '10px'}}>
                                         <Chip
-                                            avatar={<Avatar src={i.sprites.front_default}/>}
-                                            label="Primary clickable"
+                                            avatar={<Avatar src={ i && i.sprites && i.sprites.front_default}/>}
+                                            label={i && i.name}
                                             clickable
                                             color="primary"
                                             onDelete={(e) => handleDelete(e,i)}

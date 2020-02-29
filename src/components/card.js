@@ -70,7 +70,7 @@ const CardComponent = ({info, setPokemonTeam, poke}) => {
                             );
                         })
                     }
-                </div>˜
+                </div>
 
             </CardContent>
             <CardActions>
