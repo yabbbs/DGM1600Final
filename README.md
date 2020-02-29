@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![Links to requirement](requirements.pdf)
 
+[Link to my hosted pokemon team ap](https://friendly-bassi-d3c2e3.netlify.com/)
+
+---
+
 ### Final Project Requirements
 
 1. deploy to url with git push
