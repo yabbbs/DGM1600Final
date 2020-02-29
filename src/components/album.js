@@ -33,11 +33,11 @@ export default function Album() {
                 {/* Header content */}
                 <div className={classes.heroContent}>
                     <Container maxWidth="sm">
-                        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                        {/* <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                             DGM 1600
-                        </Typography>
+                        </Typography> */}
                         <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                            Add pokemon to your team!
+                            Add to your Pokemon dream team!
                         </Typography>
                         <div className={classes.heroButtons}>
                         <Grid container spacing={2} justify="center">
@@ -64,14 +64,18 @@ export default function Album() {
                     {
                         pokemon.length === 0 
                         ?
-                            <span>add pokemon to your team</span>
+                            null
                         : 
                         <Grid container spacing={4}>
                             {
                                 pokemon.map(i => {
                                 return (
                                     <Grid item key={i.url} xs={12} sm={6} md={4}>
-                                        <CardComponent info={i} setPokemonTeam={(data) => setPokemonTeam([data, ...pokemonTeam])}/>
+                                        <CardComponent 
+                                            poke={pokemon} 
+                                            info={i} 
+                                            setPokemonTeam={(data) => setPokemonTeam([data, ...pokemonTeam])}
+                                        />
                                     </Grid>
                                 )
                             })}
@@ -80,7 +84,6 @@ export default function Album() {
                 </body>
             </main>
 
-            {/* <Footer /> */}
         </React.Fragment>
     );
 }
