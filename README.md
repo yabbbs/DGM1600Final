@@ -19,16 +19,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     * Variables: using variables with a HOC mindset
     * conditional logic: Showing the add pokemon btn or null `src/components/album` line 45
     * manipulate strings: In appBar adding the amount of team members to a string `src/components/appBar` line 32
-    * create custom JavaScript objs
+    * create custom JavaScript objs: creating array of custom pokemon obj
 4. **ES6**
     * let and const: used const for fn and useState. Let for team for updating it
     * arrow functions: using all functional components 
     * template literal syntax: In appBar adding the amount of team members to a string `src/components/appBar` line 32
-    * declare obj:
+    * declare obj: teams
     * import export styntax: any of my components
 5. **Data Structures**
     * arrays to store and manipulate data: useState hooks to store all pokemon and pokemon team `src/components/album` line 13
-    * objects with key value pairs:
+    * objects with key value pairs: See obj constructor methods
     * iterate through arrays: itterating through the team array for chips `src/components/appBar` line 44
     * access object properties with bracket notation: accessing the image from an obj from the api  `src/components/card` line 26
     * object constructor methods:
+    ```
+    cont PokemonTeamMember = {
+      image : "img.png",
+      name : "Bulbasaur",
+      type: [{name: flying},{name: fire}]
+    }
+    ```

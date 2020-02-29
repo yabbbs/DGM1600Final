@@ -10,7 +10,7 @@ import Divider from '@material-ui/core/Divider';
 
 import { useStyles } from './styles';
 
-const CardComponent = ({info, setPokemonTeam, poke}) => {
+const CardComponent = ({info, setPokemonTeam, poke, team}) => {
     const [pokemonInfo, setPokemonInfo] = useState(null);
     const classes = useStyles();
 
@@ -20,12 +20,16 @@ const CardComponent = ({info, setPokemonTeam, poke}) => {
         .then(singlePoke => {
             setPokemonInfo(singlePoke)
         })
-    }, [info]);
+    }, [info, team]);
 
     const addToTeamAndUpdate = () => {
-        setPokemonTeam(pokemonInfo);
-        let index = poke.indexOf(info)
-        poke.splice(index, 1);
+        if(team.length >= 10){
+            return;
+        }else {
+            setPokemonTeam(pokemonInfo);
+            let index = poke.indexOf(info)
+            poke.splice(index, 1);
+        }
     }
 
     return (

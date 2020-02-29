@@ -6,7 +6,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import Divider from '@material-ui/core/Divider';
 import { IconButton } from '@material-ui/core';
-import DoneIcon from '@material-ui/icons/Done';
+import ClearIcon from '@material-ui/icons/Clear';
 
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -24,7 +24,6 @@ const AppBarComponent = ({ team, setPokemonTeam }) => {
     };
 
     useEffect(() => {
-
     }, [team, setPokemonTeam]);
   
     return (
@@ -54,7 +53,7 @@ const AppBarComponent = ({ team, setPokemonTeam }) => {
                                             clickable
                                             color="primary"
                                             onDelete={(e) => handleDelete(e,i)}
-                                            deleteIcon={<DoneIcon />}
+                                            deleteIcon={<ClearIcon />}
                                         />
                                     </div>
                                 )

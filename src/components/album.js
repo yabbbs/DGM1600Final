@@ -27,14 +27,14 @@ export default function Album() {
 
     return (
         <React.Fragment>
-            <AppBarComponent team={pokemonTeam} setPokemonTeam={(data) => setPokemonTeam(data)}/>
+            <AppBarComponent team={pokemonTeam} setPokemonTeam={(data) => setPokemonTeam([...data])}/>
             <main style={{display: 'flex', flexDirection:'column', height: '100%'}}>
 
                 {/* Header content */}
                 <div className={classes.heroContent}>
                     <Container maxWidth="sm">
                         <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                            Add to your Pokemon dream team!
+                            Add up to 10 Pokemon to your dream team!
                         </Typography>
                         <div className={classes.heroButtons}>
                         <Grid container spacing={2} justify="center">
@@ -69,6 +69,7 @@ export default function Album() {
                                 return (
                                     <Grid item key={i.url} xs={12} sm={6} md={4}>
                                         <CardComponent 
+                                            team={pokemonTeam}
                                             poke={pokemon} 
                                             info={i} 
                                             setPokemonTeam={(data) => setPokemonTeam([data, ...pokemonTeam])}
